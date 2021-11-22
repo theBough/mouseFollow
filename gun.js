@@ -9,4 +9,7 @@ function Gun(x,y,w,h){
   this.display = function(){
     image(imgGun, this.x, this.y, this.w, this.h);
   }
+  this.update = function(){
+    this.x = mouseX;
+  }
 }
