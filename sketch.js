@@ -20,5 +20,14 @@ function mouseClicked(){
     notShooting = false;
      shooting = setInterval(g.shoot , 80);
   }
- 
+ hitBottle();
 }
+
+function hitBottle(){
+  if(mouseX > b.x &&
+    mouseX < b.x + b.w &&
+    mouseY > b.y &&
+    mouseY < b.y + b.h){
+    bottleImage = loadImage("crackedBottle.png");
+  }
+}//end hitBottle
