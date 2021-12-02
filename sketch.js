@@ -5,6 +5,7 @@ function setup() {
   createCanvas(400, 400);
   g = new Gun(200,350,50,50);
   b = new Bottle(200,200,30,50);
+  b.placeBottle();
   notShooting = true;
 }
 
@@ -29,5 +30,6 @@ function hitBottle(){
     mouseY > b.y &&
     mouseY < b.y + b.h){
     bottleImage = loadImage("crackedBottle.png");
+    b.placeBottle();
   }
 }//end hitBottle
