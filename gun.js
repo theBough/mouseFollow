@@ -1,5 +1,6 @@
 let imgGun;
 let shootImageCycle;
+
 function Gun(x, y, w, h) {
   this.x = x;
   this.y = y;
@@ -45,6 +46,7 @@ function Gun(x, y, w, h) {
         imgGun = loadImage("shot0.png");
         shootImageCycle = 0;
         clearInterval(shooting);
+        notShooting = true;
         break;
     }
   };
