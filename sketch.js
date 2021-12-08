@@ -14,7 +14,7 @@ function draw() {
   background(220);
   let c = color(210,105,30)
   fill(c)
-  rect(0, 250, width, 20 );
+  rect(0, 230, width, 20 );
   g.display();
   g.update();
   b.display();
