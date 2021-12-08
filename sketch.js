@@ -30,6 +30,6 @@ function hitBottle(){
     mouseY > b.y &&
     mouseY < b.y + b.h){
     bottleImage = loadImage("crackedBottle.png");
-    b.placeBottle();
+    
   }
 }//end hitBottle
