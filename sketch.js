@@ -19,6 +19,9 @@ function draw() {
   let c = color(210,105,30)
   fill(c)
   rect(0, 230, width, 20 );
+  c = color(0, 150, 255);
+  fill(c);
+  rect (0,130,width, 20);
   g.display();
   g.update();
   for(var i =0 ; i <b.length ; i++){
@@ -41,7 +44,7 @@ function hitBottle(){
     mouseX < b[i].x + b[i].w &&
     mouseY > b[i].y &&
     mouseY < b[i].y + b[i].h){
-    bottleImage = loadImage("crackedBottle.png");
+    b[i].bottleImage = loadImage("crackedBottle.png");
     
   }
   } 
