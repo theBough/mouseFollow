@@ -1,5 +1,6 @@
 let g;
 let b = [];
+let d = [];
 let shooting;
 let notShooting;
 
@@ -8,6 +9,9 @@ function setup() {
   g = new Gun(200,350,50,50);
   for(var i =0 ; i < 5 ; i++){
     b.push(new Bottle(50 + i*55,200,30,50)); 
+  }//end loop
+  for( i =0 ; i < 5 ; i++){
+    d.push(new Duck(50 + i*55,100,30,50)); 
   }//end loop
   
   notShooting = true;
@@ -27,7 +31,9 @@ function draw() {
   for(var i =0 ; i <b.length ; i++){
     b[i].display();
   }
-  
+  for( i =0 ; i <d.length ; i++){
+    d[i].display();
+  }
   
 }
 function mouseClicked(){
