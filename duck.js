@@ -9,5 +9,11 @@ function Duck(x,y,w,h){
   this.display = function(){
     image(this.duckImage,this.x, this.y, this.w, this.h);
   }//end display
+  this.update = function(){
+    this.x -= 3;
+    if(this.x < 0){
+      this.x = width
+    }//end if
+  }//end update
   
 }//end Gun
