@@ -34,6 +34,9 @@ function draw() {
   for( i =0 ; i <d.length ; i++){
     d[i].display();
   }
+  for( i =0 ; i <d.length ; i++){
+    d[i].update();
+  }
   
 }
 function mouseClicked(){
@@ -42,6 +45,7 @@ function mouseClicked(){
      shooting = setInterval(g.shoot , 80);
   }
  hitBottle();
+  hitDuck();
 }
 
 function hitBottle(){
@@ -56,3 +60,15 @@ function hitBottle(){
   } 
   
 }//end hitBottle
+function hitDuck(){
+  for(var i =0 ; i < d.length ; i++){
+    if(mouseX > d[i].x &&
+    mouseX < d[i].x + d[i].w &&
+    mouseY > d[i].y &&
+    mouseY < d[i].y + d[i].h){
+    d[i].duckImage = loadImage("duckHit.png");
+    
+    }//end if
+  } //end for loop
+  
+}//end hitDuck
