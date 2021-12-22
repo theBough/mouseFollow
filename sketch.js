@@ -4,6 +4,7 @@ let d = [];
 let shooting;
 let notShooting;
 let wave, waveTwo;
+let bullets = [];
 
 function setup() {
   createCanvas(400, 400);
@@ -42,6 +43,9 @@ function draw() {
   wave.update();
   waveTwo.display();
   waveTwo.update();
+  for(i =0 ; i < bullets.length ; i ++){
+    bullets[i].display();
+  }//end for loop
 }
 function mouseClicked(){
   if ( notShooting){
@@ -50,6 +54,7 @@ function mouseClicked(){
   }
  hitBottle();
   hitDuck();
+  bullets.push(new BulletHole(mouseX, mouseY, 20,20))
 }
 
 function hitBottle(){
