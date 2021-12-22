@@ -3,6 +3,7 @@ let b = [];
 let d = [];
 let shooting;
 let notShooting;
+let wave, waveTwo;
 
 function setup() {
   createCanvas(400, 400);
@@ -16,6 +17,8 @@ function setup() {
   
   notShooting = true;
   rect(0, 300, width, 20 );
+  wave = new Waves(0,110,410,40);
+  waveTwo = new Waves(400,110,410,40);
 }
 
 function draw() {
@@ -23,9 +26,7 @@ function draw() {
   let c = color(210,105,30)
   fill(c)
   rect(0, 230, width, 20 );
-  c = color(0, 150, 255);
-  fill(c);
-  rect (0,130,width, 20);
+  
   g.display();
   g.update();
   for(var i =0 ; i <b.length ; i++){
@@ -37,7 +38,10 @@ function draw() {
   for( i =0 ; i <d.length ; i++){
     d[i].update();
   }
-  
+  wave.display();
+  wave.update();
+  waveTwo.display();
+  waveTwo.update();
 }
 function mouseClicked(){
   if ( notShooting){
