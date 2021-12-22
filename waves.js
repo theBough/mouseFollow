@@ -7,7 +7,7 @@ function Waves(x,y,w,h){
   this.wavesImage = loadImage("waves.png");
   
   this.display = function(){
-    image(this.waves,this.x, this.y, this.w, this.h);
+    image(this.wavesImage,this.x, this.y, this.w, this.h);
   }//end display
   
   this.update = function (){
