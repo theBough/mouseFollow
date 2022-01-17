@@ -52,9 +52,12 @@ function mouseClicked(){
     notShooting = false;
      shooting = setInterval(g.shoot , 80);
   }
- hitBottle();
+  hitBottle();
   hitDuck();
-  bullets.push(new BulletHole(mouseX, mouseY, 20,20))
+  if(!hitDuck() && !hitBottle())  {
+    bullets.push(new BulletHole(mouseX, mouseY, 20,20))  
+  }
+  
 }
 
 function hitBottle(){
@@ -64,7 +67,7 @@ function hitBottle(){
     mouseY > b[i].y &&
     mouseY < b[i].y + b[i].h){
     b[i].bottleImage = loadImage("crackedBottle.png");
-    
+    return true;
   }
   } 
   
@@ -76,7 +79,7 @@ function hitDuck(){
     mouseY > d[i].y &&
     mouseY < d[i].y + d[i].h){
     d[i].duckImage = loadImage("duckHit.png");
-    
+    return true;
     }//end if
   } //end for loop
   
