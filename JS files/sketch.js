@@ -1,5 +1,7 @@
 let g;
 let b = [];
+//be will be an array for bullseyes
+let be = [];
 let d = [];
 let shooting;
 let notShooting;
@@ -14,6 +16,9 @@ function setup() {
   }//end loop
   for( i =0 ; i < 5 ; i++){
     d.push(new Duck(50 + i*55,100,30,50)); 
+  }//end loop
+  for( i =0 ; i < 5 ; i++){
+    be.push(new Bullseye(50 + i*55,25,25,25)); 
   }//end loop
   
   notShooting = true;
@@ -30,7 +35,7 @@ function draw() {
   
   g.display();
   g.update();
-  for(var i =0 ; i <b.length ; i++){
+ for(var i =0 ; i <b.length ; i++){
     b[i].display();
   }
   for( i =0 ; i <d.length ; i++){
@@ -38,6 +43,9 @@ function draw() {
   }
   for( i =0 ; i <d.length ; i++){
     d[i].update();
+  }
+  for( i =0 ; i <be.length ; i++){
+    be[i].display();
   }
   wave.display();
   wave.update();
